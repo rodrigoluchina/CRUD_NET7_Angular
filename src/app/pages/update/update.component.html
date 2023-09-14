@@ -1,0 +1,40 @@
+<p-table [value]="pokemons" [tableStyle]="{ 'min-width': '1rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Edit/Delete</th>
+  
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pokemon>
+      <tr >
+        <td>{{ pokemon.id }}</td>
+        <td>
+          <ng-container *ngIf="!pokemon.isEditing; else editField">
+            {{ pokemon.name }}
+          </ng-container>
+          <ng-template #editField>
+            <input [(ngModel)]="pokemon.name" />
+          </ng-template>
+        </td>
+        <td>
+          <ng-container *ngIf="!pokemon.isEditing; else editFieldCategory">
+            {{ pokemon.category }}
+          </ng-container>
+          <ng-template #editFieldCategory>
+            <input [(ngModel)]="pokemon.category" />
+          </ng-template>
+        </td>
+        <td class="edit-delete">
+          <button *ngIf="!pokemon.isEditing" label="Edit" pButton type="button" (click)="onEditClicked(pokemon)"></button>
+          <button *ngIf="pokemon.isEditing" label="Salvar" pButton type="button" (click)="onSaveClicked(pokemon)"></button>
+        </td>
+      </tr>
+  
+  
+  
+    </ng-template>
+  
+  </p-table>

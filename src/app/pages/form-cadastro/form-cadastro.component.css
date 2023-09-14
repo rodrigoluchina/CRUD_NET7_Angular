@@ -1,0 +1,7 @@
+.field-form{
+    display: flex;
+    max-width: 20rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }

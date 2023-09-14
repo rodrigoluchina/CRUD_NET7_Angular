@@ -1,0 +1,24 @@
+<p-table [value]="pokemons" [tableStyle]="{ 'min-width': '1rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Edit/Delete</th>
+        
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pokemon>
+      <tr>
+        <td>{{ pokemon.id }}</td>
+        <td>{{ pokemon.name }}</td>
+        <td>{{ pokemon.category }}</td>
+        <td class="edit-delete">
+          <button label="Edit" pButton type="button" ></button>
+          <button label="Delete" pButton type="button" (click)="deletePokemon(pokemon)"></button>
+        </td>
+        
+      </tr>
+    </ng-template>
+  </p-table>
+  

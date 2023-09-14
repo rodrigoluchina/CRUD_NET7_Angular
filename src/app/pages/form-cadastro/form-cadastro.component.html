@@ -1,0 +1,15 @@
+
+<h2>Cadastrar Pokémon</h2>
+<form [formGroup]="pokemonForm" (ngSubmit)="addPokemon()">
+    <div class="field-form">
+        <label for="name" class="block">Pokemon:</label>
+        <input type="text" pInputText  placeholder="Name" formControlName="name" />
+    </div>
+    <div class="field-form">
+        <label for="category" class="block">Category:</label>
+        <input type="text" pInputText  placeholder="Category" formControlName="category" />
+    </div>
+
+
+    <p-button  type="submit"label="Submit"></p-button>
+</form>

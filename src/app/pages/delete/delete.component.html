@@ -1,0 +1,10 @@
+
+<form [formGroup]="pokemonForm" (ngSubmit)="deletePokemon()" >
+    <div class="field-form">
+        <label for="id">ID:</label>
+        <input type="number" pInputText  placeholder="ID do Pokemon" formControlName="id" />
+    </div>
+
+
+    <p-button  type="submit"label="Excluir"></p-button>
+</form>
